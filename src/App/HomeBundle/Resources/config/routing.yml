@@ -1,0 +1,33 @@
+france_registration:
+    path:     /register
+    defaults: { _controller: HomeBundle:Default:Register }
+
+france_login:
+    path:     /login
+    defaults: { _controller: HomeBundle:Default:Login }
+
+france_logout:
+    path:     /logout
+    defaults: { _controller: HomeBundle:Default:Logout }
+
+france_view:
+    path:     /
+    defaults: { _controller: HomeBundle:Default:View }
+
+france_add:
+    path:     /insert
+    defaults: { _controller: HomeBundle:Default:Add }
+
+france_edit:
+    path:     /update/{id}
+    defaults: { _controller: HomeBundle:Default:Edit }
+
+france_delete:
+    path:     /delete/{id}
+    defaults: { _controller: HomeBundle:Default:Delete }
+france_csv_import:
+    path:     /csvimport
+    defaults: { _controller: HomeBundle:Default:importcsv }
+france_csv_export:
+    path:     /csvexport
+    defaults: { _controller: HomeBundle:Default:downloadcsv }

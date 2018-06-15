@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\DataBundle\Entity\Info" table="info">
+    <indexes>
+      <index name="Info_User_FK_idx" columns="User"/>
+    </indexes>
+    <id name="id" type="integer" column="Id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="Name" length="45" nullable="true"/>
+    <field name="email" type="string" column="Email" length="45" nullable="true"/>
+    <field name="phone" type="string" column="Phone" length="45" nullable="true"/>
+    <field name="address" type="text" column="Address" nullable="true"/>
+    <many-to-one field="user" target-entity="User">
+      <join-columns>
+        <join-column name="User" referenced-column-name="Id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
